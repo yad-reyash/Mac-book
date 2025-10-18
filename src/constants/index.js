@@ -38,7 +38,7 @@ export const performanceImgPositions = [
     { id: 'p2', right: 8, bottom: 15 },
     { id: 'p3', left: 10, bottom: 25 },
     { id: 'p4', right: 12, bottom: 30 },
-    { id: 'p5' }, // Skipped in animation (see Performance.jsx line 50)
+    { id: 'p5' }, // No positioning - excluded from GSAP animation
     { id: 'p6', left: 15, bottom: 35 },
     { id: 'p7', right: 10, bottom: 40 },
 ];
