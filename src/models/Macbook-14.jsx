@@ -7,8 +7,7 @@ import {Color , SRGBColorSpace} from 'three'
 export default function Macbook14(props) {
     const {color } = useMacbookStore();
     const {nodes , materials, scene} = useGLTF('/models/macbook-14.glb')   
-    const texture = useTexture('/screem.png');
-    texture.colorSpace = SRGBColorSpace;
+    const texture = useTexture('/screen.png');    texture.colorSpace = SRGBColorSpace;
     texture.needsUpdate = true;
 
      useEffect(()=>{
