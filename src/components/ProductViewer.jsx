@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import useMacbookStore from '../store'
+import { useMacbookStore } from '../store'
 import { Canvas } from '@react-three/fiber'
 import { useMediaQuery } from 'react-responsive'
 import StudioLights from '../three/StudioLights'
