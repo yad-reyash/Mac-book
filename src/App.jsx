@@ -3,7 +3,7 @@ import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Feature from './components/Feature';
 import Footer from './components/Footer';
-import Product from './components/ProductViewer';
+import ProductViewer from './components/ProductViewer';
 
 const App = () => {
   return (

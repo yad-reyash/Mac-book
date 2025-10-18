@@ -1,21 +1,21 @@
 import React, { useEffect } from 'react'
-import {useGlTF , useTexture} from '@react-three/drei'
+import {useGLTF , useTexture} from '@react-three/drei'
 import {noChangeParts} from '../constants/index.js'
 import {useMacbookStore} from '../store/index.js'
 import {Color , SRGBColorSpace} from 'three'
 
 export default function Macbook14(props) {
     const {color } = useMacbookStore();
-    const {nodes , materials} = useGlTF('/models/macbook-14.glb')   
+    const {nodes , materials, scene} = useGLTF('/models/macbook-14.glb')   
     const texture = useTexture('/screem.png');
     texture.colorSpace = SRGBColorSpace;
-    texture.needaUpdate =true;
+    texture.needsUpdate = true;
 
      useEffect(()=>{
         scene.traverse((child) => {
             if (child.isMesh) {
-                if (noChangeParts.includes(child.name)) { 
-                    child.material.color = new Color(color);
+                if (!noChangeParts.includes(child.name)) {
+                  child.material.color = new Color(color);
                 }
             }
         })

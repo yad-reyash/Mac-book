@@ -47,7 +47,7 @@ const Hero = ({ onBuy }) => {
 
 
                         </div>
-                        <video ref={videoRef} src="/videos/hero.mp4" autoPlay muted playsInline-2  />
+                        <video ref={videoRef} src="/videos/hero.mp4" autoPlay muted playsInline />
                         <button onClick={handleBuy} disabled={loading} aria-busy={loading}>{loading ? 'Processing…' : 'Buy'}</button>
                         {error && <p role="alert" style={{color: 'red'}}>{error}</p>}
                         <p>Description of the MacBook Pro features and specifications.</p>
