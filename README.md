@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <a href="https://youtu.be/DEeaT6FxEws" target="_blank">
+   
       <img src="public/readme/hero.webp" alt="Project Banner">
     </a>
   <br />
@@ -19,7 +19,7 @@
   <h3 align="center">Apple Mabook Website</h3>
 
    <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://www.youtube.com/watch?v=XUkNR-JfHwo" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
+     Build this project step by step with our detailed tutorial on <a 
     </div>
 </div>
 
@@ -34,11 +34,9 @@
 
 ## 🚨 Tutorial
 
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@javascriptmastery/videos" target="_blank"><b>JavaScript Mastery</b></a>.
 
-If you prefer visual learning, this is the perfect resource for you. Follow our tutorial to learn how to build projects like these step-by-step in a beginner-friendly manner!
 
-<a href="https://youtu.be/DEeaT6FxEws" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
+
 
 ## <a name="introduction">✨ Introduction</a>
 
@@ -96,11 +94,8 @@ Make sure you have the following installed on your machine:
 - [Node.js](https://nodejs.org/en)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
 
-**Cloning the Repository**
 
-```bash
-git clone https://github.com/adrianhajdin/gsap_macbook_landing.git
-cd gsap_macbook_landing
+
 ```
 
 **Installation**
