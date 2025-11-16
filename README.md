@@ -1,8 +1,7 @@
 <div align="center">
   <br />
    
-      <img src="public/readme/hero.webp" alt="Project Banner">
-    </a>
+    
   <br />
 
   <div>
@@ -90,7 +89,7 @@ Follow these steps to set up the project locally on your machine.
 
 Make sure you have the following installed on your machine:
 
-- [Git](https://git-scm.com/)
+
 - [Node.js](https://nodejs.org/en)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
 
@@ -122,13 +121,3 @@ Assets and snippets used in the project can be found in the **[video kit](https:
   <img src="public/readme/videokit.webp" alt="Video Kit Banner">
 </a>
 
-## <a name="more">🚀 More</a>
-
-**Advance your skills with Next.js Pro Course**
-
-Enjoyed creating this project? Dive deeper into our PRO courses for a richer learning adventure. They're packed with
-detailed explanations, cool features, and exercises to boost your skills. Give it a go!
-
-<a href="https://jsm.dev/mbook-jsm" target="_blank">
-  <img src="public/readme/jsmpro.webp" alt="Project Banner">
-</a>
