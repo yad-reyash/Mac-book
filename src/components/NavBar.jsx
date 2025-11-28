@@ -1,6 +1,7 @@
+import React, {memo} from 'react';
 import {navLinks} from "../constants";
 
-const NavBar = () => {
+const NavBar = memo(function NavBar() {
     return (
         <header>
             <nav>
@@ -25,5 +26,5 @@ const NavBar = () => {
             </nav>
         </header>
     )
-}
+});
 export default NavBar

@@ -1,6 +1,7 @@
+import React, {memo} from 'react';
 import {Environment, Lightformer} from "@react-three/drei";
 
-const StudioLights = () => {
+const StudioLights = memo(function StudioLights() {
     return (
         <group name="lights">
             <Environment resolution={256}>
@@ -41,5 +42,5 @@ const StudioLights = () => {
             />
         </group>
     )
-}
+});
 export default StudioLights

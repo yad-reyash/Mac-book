@@ -26,6 +26,9 @@ const noChangeParts = [
     "Object_10",
 ];
 
+// Pre-computed Set for O(1) lookup performance in model traversals
+const noChangePartsSet = new Set(noChangeParts);
+
 const performanceImages = [
     { id: "p1", src: "/performance1.png" },
     { id: "p2", src: "/performance2.png" },
@@ -134,6 +137,7 @@ export {
     footerLinks,
     navLinks,
     noChangeParts,
+    noChangePartsSet,
     performanceImages,
     performanceImgPositions,
 };

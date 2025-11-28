@@ -1,6 +1,7 @@
+import React, {memo} from 'react';
 import {footerLinks} from "../constants/index.js";
 
-const Footer = () => {
+const Footer = memo(function Footer() {
     return (
         <footer>
             <div className="info">
@@ -23,5 +24,5 @@ const Footer = () => {
             </div>
         </footer>
     )
-}
+});
 export default Footer
