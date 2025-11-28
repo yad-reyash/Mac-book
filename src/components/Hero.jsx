@@ -1,6 +1,6 @@
-import {useEffect, useRef} from "react";
+import React, {memo, useEffect, useRef} from "react";
 
-const Hero = () => {
+const Hero = memo(function Hero() {
     const videoRef = useRef();
 
     useEffect(() => {
@@ -21,5 +21,5 @@ const Hero = () => {
             <p>From $1599 or $133/mo for 12 months</p>
         </section>
     )
-}
+});
 export default Hero
