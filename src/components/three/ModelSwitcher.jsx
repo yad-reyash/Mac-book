@@ -25,17 +25,25 @@ const ModelSwitcher = ({ scale, isMobile }) => {
     const fadeMeshes = useCallback((groupRef, meshCache, opacity) => {
         if(!groupRef) return;
         
-        // Cache meshes if not already cached
-        if(meshCache.length === 0) {
+        // Cache meshes if not already cached (defensive check)
+        if(meshCache.length === 0 && groupRef) {
+            const meshes = [];
             groupRef.traverse((child) => {
-                if(child.isMesh) meshCache.push(child);
+                if(child.isMesh) meshes.push(child);
             });
+            // Only update the cache if we found meshes
+            if(meshes.length > 0) {
+                meshCache.push(...meshes);
+            }
         }
         
-        meshCache.forEach((mesh) => {
-            mesh.material.transparent = true;
-            gsap.to(mesh.material, { opacity, duration: ANIMATION_DURATION });
-        });
+        // Animate only if we have cached meshes
+        if(meshCache.length > 0) {
+            meshCache.forEach((mesh) => {
+                mesh.material.transparent = true;
+                gsap.to(mesh.material, { opacity, duration: ANIMATION_DURATION });
+            });
+        }
     }, []);
 
     // Memoize move function
