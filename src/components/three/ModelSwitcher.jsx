@@ -1,4 +1,4 @@
-import { useRef, useCallback, useEffect} from "react";
+import { useRef, useCallback} from "react";
 import {PresentationControls} from "@react-three/drei";
 import gsap from 'gsap';
 
@@ -21,11 +21,18 @@ const ModelSwitcher = ({ scale, isMobile }) => {
 
     const showLargeMacbook = scale === SCALE_LARGE_DESKTOP || scale === SCALE_LARGE_MOBILE;
 
-    // Memoize fade function to avoid recreating on each render
-    const fadeMeshes = useCallback((meshes, opacity) => {
-        if(!meshes || meshes.length === 0) return;
+    // Memoize fade function that also handles mesh caching
+    const fadeMeshes = useCallback((groupRef, meshCache, opacity) => {
+        if(!groupRef) return;
         
-        meshes.forEach((mesh) => {
+        // Cache meshes if not already cached
+        if(meshCache.length === 0) {
+            groupRef.traverse((child) => {
+                if(child.isMesh) meshCache.push(child);
+            });
+        }
+        
+        meshCache.forEach((mesh) => {
             mesh.material.transparent = true;
             gsap.to(mesh.material, { opacity, duration: ANIMATION_DURATION });
         });
@@ -37,35 +44,21 @@ const ModelSwitcher = ({ scale, isMobile }) => {
         gsap.to(group.position, { x, duration: ANIMATION_DURATION });
     }, []);
 
-    // Cache meshes on mount
-    useEffect(() => {
-        if(smallMacbookRef.current && smallMeshes.current.length === 0) {
-            smallMacbookRef.current.traverse((child) => {
-                if(child.isMesh) smallMeshes.current.push(child);
-            });
-        }
-        if(largeMacbookRef.current && largeMeshes.current.length === 0) {
-            largeMacbookRef.current.traverse((child) => {
-                if(child.isMesh) largeMeshes.current.push(child);
-            });
-        }
-    }, []);
-
     useGSAP(() => {
         if(showLargeMacbook) {
             moveGroup(smallMacbookRef.current, -OFFSET_DISTANCE);
             moveGroup(largeMacbookRef.current, 0);
 
-            fadeMeshes(smallMeshes.current, 0);
-            fadeMeshes(largeMeshes.current, 1);
+            fadeMeshes(smallMacbookRef.current, smallMeshes.current, 0);
+            fadeMeshes(largeMacbookRef.current, largeMeshes.current, 1);
         } else {
             moveGroup(smallMacbookRef.current, 0);
             moveGroup(largeMacbookRef.current, OFFSET_DISTANCE);
 
-            fadeMeshes(smallMeshes.current, 1);
-            fadeMeshes(largeMeshes.current, 0);
+            fadeMeshes(smallMacbookRef.current, smallMeshes.current, 1);
+            fadeMeshes(largeMacbookRef.current, largeMeshes.current, 0);
         }
-    }, [scale, showLargeMacbook, fadeMeshes, moveGroup]);
+    }, [scale, fadeMeshes, moveGroup]);
 
     const controlsConfig = {
         snap: true,
