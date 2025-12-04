@@ -15,21 +15,21 @@ const ModelScroll = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 1024px)'})
     const { setTexture } = useMacbookStore();
 
-    // Pre-load all feature videos during component mount
+    // Pre-load all feature videos during component mount using link preload
     useEffect(() => {
         featureSequence.forEach((feature) => {
-            const v = document.createElement('video');
-
-            Object.assign(v, {
-                src: feature.videoPath,
-                muted: true,
-                playsInline: true,
-                preload: 'auto',
-                crossOrigin: 'anonymous',
-            });
-
-            v.load();
-        })
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'video';
+            link.href = feature.videoPath;
+            document.head.appendChild(link);
+        });
+        
+        // Cleanup function to remove preload links when component unmounts
+        return () => {
+            const preloadLinks = document.querySelectorAll('link[rel="preload"][as="video"]');
+            preloadLinks.forEach(link => link.remove());
+        };
     }, []);
 
     useGSAP(() => {

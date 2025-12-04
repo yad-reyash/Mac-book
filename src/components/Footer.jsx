@@ -1,3 +1,4 @@
+import {memo} from "react";
 import {footerLinks} from "../constants/index.js";
 
 const Footer = () => {
@@ -24,4 +25,4 @@ const Footer = () => {
         </footer>
     )
 }
-export default Footer
+export default memo(Footer)
