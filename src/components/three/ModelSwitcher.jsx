@@ -26,15 +26,12 @@ const ModelSwitcher = ({ scale, isMobile }) => {
         if(!groupRef) return;
         
         // Cache meshes if not already cached (defensive check)
-        if(meshCache.length === 0 && groupRef) {
+        if(meshCache.length === 0) {
             const meshes = [];
             groupRef.traverse((child) => {
                 if(child.isMesh) meshes.push(child);
             });
-            // Only update the cache if we found meshes
-            if(meshes.length > 0) {
-                meshCache.push(...meshes);
-            }
+            meshCache.push(...meshes);
         }
         
         // Animate only if we have cached meshes
