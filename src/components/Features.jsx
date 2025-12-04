@@ -17,18 +17,24 @@ const ModelScroll = () => {
 
     // Pre-load all feature videos during component mount using link preload
     useEffect(() => {
+        const preloadLinks = [];
+        
         featureSequence.forEach((feature) => {
             const link = document.createElement('link');
             link.rel = 'preload';
             link.as = 'video';
             link.href = feature.videoPath;
             document.head.appendChild(link);
+            preloadLinks.push(link);
         });
         
-        // Cleanup function to remove preload links when component unmounts
+        // Cleanup function to remove only the preload links created by this component
         return () => {
-            const preloadLinks = document.querySelectorAll('link[rel="preload"][as="video"]');
-            preloadLinks.forEach(link => link.remove());
+            preloadLinks.forEach(link => {
+                if (link.parentNode) {
+                    link.parentNode.removeChild(link);
+                }
+            });
         };
     }, []);
 

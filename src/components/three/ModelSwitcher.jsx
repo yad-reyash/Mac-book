@@ -1,4 +1,4 @@
-import { useRef, useMemo, useCallback} from "react";
+import { useRef, useCallback, useEffect} from "react";
 import {PresentationControls} from "@react-three/drei";
 import gsap from 'gsap';
 
@@ -38,15 +38,13 @@ const ModelSwitcher = ({ scale, isMobile }) => {
     }, []);
 
     // Cache meshes on mount
-    useMemo(() => {
-        if(smallMacbookRef.current) {
-            smallMeshes.current = [];
+    useEffect(() => {
+        if(smallMacbookRef.current && smallMeshes.current.length === 0) {
             smallMacbookRef.current.traverse((child) => {
                 if(child.isMesh) smallMeshes.current.push(child);
             });
         }
-        if(largeMacbookRef.current) {
-            largeMeshes.current = [];
+        if(largeMacbookRef.current && largeMeshes.current.length === 0) {
             largeMacbookRef.current.traverse((child) => {
                 if(child.isMesh) largeMeshes.current.push(child);
             });
