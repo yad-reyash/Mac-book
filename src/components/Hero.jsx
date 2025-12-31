@@ -1,4 +1,4 @@
-import {useEffect, useRef} from "react";
+import {useEffect, useRef, memo} from "react";
 
 const Hero = () => {
     const videoRef = useRef();
@@ -22,4 +22,4 @@ const Hero = () => {
         </section>
     )
 }
-export default Hero
+export default memo(Hero)

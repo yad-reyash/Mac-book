@@ -75,6 +75,7 @@ const Performance = () => {
                         src={item.src}
                         className={item.id}
                         alt={item.alt || `Performance Image #${index + 1}`}
+                        loading="lazy"
                     />
                 ))}
              </div>

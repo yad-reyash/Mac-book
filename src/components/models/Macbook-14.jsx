@@ -8,7 +8,7 @@ Source: https://sketchfab.com/3d-models/macbook-pro-m3-16-inch-2024-8e34fc2b3031
 Title: macbook pro M3 16 inch 2024
 */
 
-import React, {useEffect} from 'react'
+import React, {useEffect, useMemo} from 'react'
 import {useGLTF, useTexture} from '@react-three/drei'
 import useMacbookStore from "../../store";
 import {noChangeParts} from "../../constants/index.js";
@@ -22,15 +22,23 @@ export default function MacbookModel14(props) {
     texture.colorSpace = SRGBColorSpace;
     texture.needsUpdate = true;
 
+  // Cache colorable meshes to avoid repeated traversal
+  const colorableMeshes = useMemo(() => {
+      const meshes = [];
+      scene.traverse((child) => {
+          if (child.isMesh && !noChangeParts.includes(child.name)) {
+              meshes.push(child);
+          }
+      });
+      return meshes;
+  }, [scene]);
+
   useEffect(() => {
-    scene.traverse((child) => {
-        if(child.isMesh) {
-            if(!noChangeParts.includes(child.name)) {
-                child.material.color = new Color(color);
-            }
-        }
-    })
-  }, [color, scene])
+      const newColor = new Color(color);
+      colorableMeshes.forEach((mesh) => {
+          mesh.material.color = newColor;
+      });
+  }, [color, colorableMeshes]);
 
   return (
     <group {...props} dispose={null}>

@@ -1,3 +1,4 @@
+import {memo} from "react";
 import {navLinks} from "../constants";
 
 const NavBar = () => {
@@ -26,4 +27,4 @@ const NavBar = () => {
         </header>
     )
 }
-export default NavBar
+export default memo(NavBar)

@@ -1,3 +1,4 @@
+import {memo} from "react";
 import {useMediaQuery} from "react-responsive";
 import {useGSAP} from "@gsap/react";
 import gsap from 'gsap';
@@ -73,4 +74,4 @@ const Showcase = () => {
         </section>
     )
 }
-export default Showcase
+export default memo(Showcase)
