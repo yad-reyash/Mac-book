@@ -37,6 +37,30 @@ This document outlines the performance improvements made to the MacBook GSAP app
 - **Solution**: Added `loading="lazy"` attribute to images
 - **Impact**: Faster initial page load, images load only when needed
 
+### 6. **Additional Component Memoization** (Low-Medium Impact)
+- **Files**: `StudioLights.jsx`, `ProductViewer.jsx`, `Performance.jsx`
+- **Problem**: Components re-rendering unnecessarily when parent state changes
+- **Solution**: Wrapped components with `React.memo()` to prevent unnecessary re-renders
+- **Impact**: Fewer DOM updates and reconciliation cycles for 3D lighting and viewer components
+
+### 7. **Optimized Scale Calculation in ProductViewer** (Low Impact)
+- **File**: `ProductViewer.jsx`
+- **Problem**: Scale adjustment recalculated on every render
+- **Solution**: Memoized scale calculation with `useMemo()` based on mobile state
+- **Impact**: Prevents unnecessary recalculations when component re-renders
+
+### 8. **Memoized Controls Configuration** (Low Impact)
+- **File**: `ModelSwitcher.jsx`
+- **Problem**: Controls config object recreated on every render
+- **Solution**: Wrapped config object in `useMemo()` to maintain stable reference
+- **Impact**: Prevents unnecessary prop updates to PresentationControls
+
+### 9. **Fixed GSAP Dependencies** (Code Quality)
+- **File**: `Features.jsx`
+- **Problem**: useGSAP hook missing `setTexture` dependency
+- **Solution**: Added `setTexture` to dependency array
+- **Impact**: Ensures proper hook behavior and eliminates potential stale closure issues
+
 ## Performance Metrics Expectations
 
 ### Before Optimizations:
@@ -50,6 +74,9 @@ This document outlines the performance improvements made to the MacBook GSAP app
 - Video preloading: Using native browser preload mechanism
 - Static components memoized to prevent unnecessary re-renders
 - Images load on-demand as they enter viewport
+- Scale calculations and control configs memoized to prevent recalculations
+- 3D viewer components (StudioLights, ProductViewer) optimized to reduce re-renders
+- Proper dependency management in GSAP hooks
 
 ## Technical Details
 

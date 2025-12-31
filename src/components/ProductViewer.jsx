@@ -1,3 +1,4 @@
+import {memo, useMemo} from "react";
 import useMacbookStore from "../store";
 import clsx from "clsx";
 import {Canvas} from "@react-three/fiber";
@@ -12,6 +13,12 @@ const ProductViewer = () => {
     const { color, scale, setColor, setScale } = useMacbookStore();
 
     const isMobile = useMediaQuery({ query: '(max-width: 1024px)'});
+
+    // Memoize the adjusted scale to prevent unnecessary recalculations
+    const adjustedScale = useMemo(() => 
+        isMobile ? scale - 0.03 : scale, 
+        [isMobile, scale]
+    );
 
     return (
         <section id="product-viewer">
@@ -52,9 +59,9 @@ const ProductViewer = () => {
             <Canvas id="canvas" camera={{ position: [0, 2, 5], fov: 50, near: 0.1, far: 100}}>
                 <StudioLights />
 
-                <ModelSwitcher scale={isMobile ? scale - 0.03 : scale} isMobile={isMobile} />
+                <ModelSwitcher scale={adjustedScale} isMobile={isMobile} />
             </Canvas>
         </section>
     )
 }
-export default ProductViewer
+export default memo(ProductViewer)

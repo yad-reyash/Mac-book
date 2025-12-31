@@ -1,4 +1,4 @@
-import { useRef, useCallback} from "react";
+import { useRef, useCallback, useMemo} from "react";
 import {PresentationControls} from "@react-three/drei";
 import gsap from 'gsap';
 
@@ -65,13 +65,14 @@ const ModelSwitcher = ({ scale, isMobile }) => {
         }
     }, [scale]);
 
-    const controlsConfig = {
+    // Memoize controls config to prevent recreation on every render
+    const controlsConfig = useMemo(() => ({
         snap: true,
         speed: 1,
         zoom: 1,
         azimuth: [-Infinity, Infinity],
         config: {mass:1, tension: 0, friction: 26}
-    }
+    }), []);
 
     return (
         <>
