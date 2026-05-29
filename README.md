@@ -1,96 +1,245 @@
 <div align="center">
-  <br />
-   
-    
-  <br />
 
-  <div>
-<img src="https://img.shields.io/badge/-React-58C4DC?style=for-the-badge&logo=React&logoColor=white" />
-<img src="https://img.shields.io/badge/-GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white" />
-<img src="https://img.shields.io/badge/-Three.js-27136A?style=for-the-badge&logo=three.js&logoColor=white" />
-<img src="https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-<img src="https://img.shields.io/badge/-CodeRabbit-FF6C37?style=for-the-badge&logo=visual-studio-code&logoColor=white" />
-  </div>
+<br />
 
-  <h3 align="center">Apple Mabook Website</h3>
+# 🖥️ MacBook Pro — Immersive 3D Website
 
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a 
-    </div>
+### An Apple-style interactive 3D product showcase built with cutting-edge web technologies
+
+<br />
+
+![React](https://img.shields.io/badge/-React_19-58C4DC?style=for-the-badge&logo=React&logoColor=white)
+![Three.js](https://img.shields.io/badge/-Three.js-27136A?style=for-the-badge&logo=three.js&logoColor=white)
+![GSAP](https://img.shields.io/badge/-GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Zustand](https://img.shields.io/badge/-Zustand-FF6C37?style=for-the-badge&logo=npm&logoColor=white)
+
+<br />
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-macbook--three--kappa.vercel.app-black?style=for-the-badge)](https://macbook-three-kappa.vercel.app)
+
+<br />
+
 </div>
 
-## 📋 <a name="table">Table of Contents</a>
+---
 
-1. ✨ [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🔗 [Assets](#links)
-6. 🚀 [More](#more)
+## 📋 Table of Contents
 
-## 🚨 Tutorial
-
-
-
+1. [Introduction](#-introduction)
+2. [Live Demo](#-live-demo)
+3. [Tech Stack](#%EF%B8%8F-tech-stack)
+4. [Features](#-features)
+5. [Project Structure](#-project-structure)
+6. [Quick Start](#-quick-start)
+7. [Scripts](#-scripts)
 
 
-## <a name="introduction">✨ Introduction</a>
+---
 
-Apple-style 3D website built with React, Three.js, GSAP, and TailwindCSS! Showcase products in immersive 3D scenes, scroll-animated models, and pinned sections. Featuring responsive design, smooth timeline animations, and visually striking image transitions—perfect for developers creating interactive, modern web experiences.
+## ✨ Introduction
 
+A stunning Apple-inspired **3D MacBook Pro product website** that brings hardware to life in the browser. Built with React, Three.js, GSAP, and Tailwind CSS, this project demonstrates how modern web technologies can create cinematic, scroll-driven product experiences — rivaling native app aesthetics on the open web.
 
+Featuring lifelike 3D scenes, scroll-triggered model animations, pinned sections, image masking, and seamless timeline transitions — this is the benchmark for interactive product storytelling on the web.
 
-## <a name="tech-stack">⚙️ Tech Stack</a>
+---
 
-- **[CodeRabbit](https://jsm.dev/mbook-coderabbit)** is an AI-powered code review tool that integrates with IDEs like VS Code and Git platforms such as GitHub and GitLab. It provides real-time, context-aware feedback on pull requests, including line-by-line analysis, security vulnerability detection, and adherence to coding standards. CodeRabbit learns from your team's preferences, adapting its reviews over time to enhance code quality and developer productivity.
+## 🌐 Live Demo
 
-- **[GSAP](https://gsap.com/)** is a powerful JavaScript animation library used in this project to create dynamic, scroll-driven visuals. Features include SplitText animations for bold text reveals, ScrollTrigger for timeline control, parallax scrolling, pinned sections, scroll-synced video playback, seamless multi-section timelines, image masking effects, and a fully custom animated carousel.
+> 👉 **[https://macbook-three-kappa.vercel.app](https://macbook-three-kappa.vercel.app)**
 
-- **[React](https://react.dev/)** is a declarative JavaScript library for building interactive UIs. It provides the component structure for modular development, allowing smooth integration of GSAP animations, reusable logic for scroll behavior, and support for responsive layout and state-driven UI features like carousels and video sections.
+Experience the full interactive 3D showcase live. Best viewed on desktop with a mouse/trackpad for full scroll and animation fidelity.
 
-- **[Tailwind CSS](https://tailwindcss.com/)** is a utility-first CSS framework that allows developers to design custom user interfaces by applying low-level utility classes directly in HTML, streamlining the design process.
+---
 
-- **[Three.js](https://threejs.org/)** is a powerful JavaScript 3D library used in this project to render interactive 3D graphics in the browser. Features include WebGL-based rendering, support for cameras, lights, and materials, 3D model importing, geometry and texture manipulation, scene graph management, animation capabilities, raycasting for interactivity, and integration with physics and post-processing effects for immersive experiences.
+## ⚙️ Tech Stack
 
-- **[Vite](https://vitejs.dev/)** is a lightning-fast build tool and development server that powers this project’s workflow. It enables instant hot module replacement, fast startup, and optimized production builds—ideal for an animation-heavy React site with smooth, real-time development feedback and minimal config.
+| Technology | Role |
+|---|---|
+| **React 19** | Component architecture, state-driven UI, reusable animation hooks |
+| **Three.js** | WebGL rendering, 3D model loading, lighting, materials, scene graph |
+| **GSAP + ScrollTrigger** | Scroll-driven timelines, SplitText reveals, pinned sections, parallax |
+| **Tailwind CSS** | Utility-first styling, responsive layout, design tokens |
+| **Vite** | Lightning-fast dev server, HMR, optimized production builds |
+| **Zustand** | Lightweight global state management for reactive UI updates |
+| **CodeRabbit** | AI-powered code review integrated with GitHub for PR quality checks |
 
-- **[Zustand](https://zustand-demo.pmnd.rs/)** is a lightweight and flexible state management library for React. In this project, it’s used to manage global state efficiently, enabling reactive updates with minimal boilerplate. Features include simple store creation, easy state slicing, middleware support for logging and persistence, seamless integration with React components, and performant state updates without unnecessary re-renders.
+### Why This Stack?
 
-## <a name="features">🔋 Features</a>
+- **Three.js** handles all WebGL complexity — model import, lights, cameras, materials — with a clean scene graph API.
+- **GSAP ScrollTrigger** is the gold standard for scroll-linked animation; it enables frame-perfect sync between scroll position and 3D/CSS animation state.
+- **React** provides a modular component shell that keeps animation logic decoupled from layout and rendering.
+- **Zustand** avoids prop-drilling for shared animation and UI state without Redux's boilerplate overhead.
+- **Vite** ensures the animation-heavy bundle stays performant in development with instant HMR.
 
-👉 **3D Product Scene with Realistic Lighting System**: Showcase products in lifelike 3D environments for maximum visual impact.
+---
 
-👉 **Animate 3D Model on Scroll**: Create immersive interactions by animating 3D models based on user scroll position.
+## 🔋 Features
 
-👉 **ScrollTrigger Effects**: Power scroll-based animations and timeline control with GSAP’s ScrollTrigger.
+### 🧊 3D Product Scene with Realistic Lighting
+Render the MacBook Pro in a lifelike WebGL environment with physically accurate lighting — ambient, directional, and point lights create depth and material realism.
 
-👉 **Pinned Sections**: Lock sections in view while animating content for engaging scroll experiences.
+### 🎡 Scroll-Animated 3D Model
+The 3D model rotates, translates, and scales in response to the user's scroll position. Every frame is precisely choreographed to GSAP's ScrollTrigger timeline.
 
-👉 **Image Masking Effects**: Use scroll-triggered pins and masks for visually striking image transitions.
+### 📌 Pinned Sections
+Certain sections lock in the viewport while internal content animates — a technique widely used in Apple's own product pages for maximum storytelling impact.
 
-👉 **Seamless Timeline Animations**: Craft smooth animation timelines that span across multiple sections.
+### 🎭 Image Masking Effects
+Scroll-triggered masks reveal or conceal images with fluid, cinematic transitions that respond directly to scroll momentum.
 
-👉 **Responsive Design**: Ensure fluid UI and adaptive GSAP animations across all screen sizes.
+### 🕐 Seamless Multi-Section Timelines
+GSAP timelines are chained across sections, creating one cohesive animation arc that spans the entire page — no jarring cuts or disconnected transitions.
 
-And many more, including code architecture and reusability.
+### ✂️ SplitText Headline Animations
+Bold typographic reveals are powered by GSAP's SplitText plugin, splitting headlines into characters or words for staggered entrance animations.
 
-## <a name="quick-start">🤸 Quick Start</a>
+### 🎥 Scroll-Synced Video Playback
+Video elements play forward or backward based on scroll direction and speed — a deeply immersive storytelling mechanic.
 
+### 🎠 Custom Animated Carousel
+A bespoke carousel component built with GSAP — smooth, interactive, and entirely free of third-party carousel libraries.
 
+### 📐 Fully Responsive Design
+All GSAP animations and Three.js scenes adapt to screen size, ensuring a consistent, polished experience across desktop, tablet, and mobile.
 
-**Running the Project**
+---
+
+## 📁 Project Structure
+
+```
+macbook-website/
+├── public/
+│   ├── models/          # GLTF/GLB 3D model files
+│   ├── videos/          # Scroll-synced video assets
+│   └── images/          # Static image assets
+├── src/
+│   ├── components/      # Reusable React components
+│   │   ├── canvas/      # Three.js scene components
+│   │   ├── sections/    # Page section components
+│   │   └── ui/          # UI elements (carousel, nav, etc.)
+│   ├── store/           # Zustand state stores
+│   ├── hooks/           # Custom React hooks (scroll, animation)
+│   ├── utils/           # GSAP animation helpers and utilities
+│   ├── App.jsx          # Root component and layout
+│   └── main.jsx         # Entry point
+├── index.html
+├── vite.config.js
+├── tailwind.config.js
+└── package.json
+```
+
+---
+
+## 🤸 Quick Start
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- **[Node.js](https://nodejs.org/)** — v18.0 or later
+- **[npm](https://www.npmjs.com/)** — v9.0 or later (or pnpm / yarn)
+- **Git**
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/your-username/macbook-website.git
+cd macbook-website
+```
+
+**2. Install dependencies**
+
+```bash
+npm install
+```
+
+**3. Start the development server**
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser to view the project.
+**4. Open in browser**
 
-## <a name="links">🔗 Assets</a>
+Navigate to [http://localhost:5173](http://localhost:5173) to view the project.
 
-Assets and snippets used in the project can be found in the **[video kit](https://jsm.dev/mbook-kit)**.
+> 💡 **Tip:** For the best development experience, use a modern Chromium-based browser with hardware acceleration enabled.
 
-<a href="https://jsm.dev/mbook-kit" target="_blank">
-  <img src="public/readme/videokit.webp" alt="Video Kit Banner">
-</a>
+---
 
+## 📜 Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the Vite development server with HMR |
+| `npm run build` | Build the optimised production bundle |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint across the project |
+
+---
+
+
+## 🚀 Deployment
+
+This project is deployed on **[Vercel](https://vercel.com)** for zero-config, production-grade hosting.
+
+To deploy your own instance:
+
+```bash
+npm run build
+```
+
+Then connect your repository to Vercel — it auto-detects Vite and configures the build pipeline.
+
+Alternatively, deploy with the Vercel CLI:
+
+```bash
+npx vercel --prod
+```
+
+---
+
+## 📚 Key Concepts & Learning Outcomes
+
+Working through this project teaches:
+
+- Setting up and managing a **Three.js scene** inside a React component lifecycle
+- Using **GSAP ScrollTrigger** to link timeline progress to scroll position
+- Implementing **scroll-synced video** playback with requestAnimationFrame
+- Creating **pinned scroll sections** for storytelling-style page flows
+- Building a **custom animated carousel** without third-party dependencies
+- Managing **global animation state** with Zustand across components
+- Optimising **3D assets** and animations for web performance
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To get started:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-animation`
+3. Commit your changes: `git commit -m 'Add amazing animation'`
+4. Push to the branch: `git push origin feature/amazing-animation`
+5. Open a Pull Request — CodeRabbit will automatically review your changes
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+Made with ❤️ using React, Three.js & GSAP
+
+⭐ Star this repo if you found it helpful!
+
+</div>
