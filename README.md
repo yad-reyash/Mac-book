@@ -1,5 +1,7 @@
 <div align="center">
-url="https://macbook-three-kappa.vercel.app/"
+## 🌐 Live Demo
+
+Visit the live application: [https://coco-cola-six.vercel.app/](https://coco-cola-six.vercel.app/)
 
 <br />
 
