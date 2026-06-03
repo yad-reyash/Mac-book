@@ -1,7 +1,5 @@
 <div align="center">
-## 🌐 Live Demo
 
-Visit the live application: [https://coco-cola-six.vercel.app/](https://coco-cola-six.vercel.app/)
 
 <br />
 
