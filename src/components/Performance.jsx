@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { performanceImages, performanceImgPositions } from "../constants/index.js";
@@ -97,4 +97,4 @@ const Performance = () => {
         </section>
     )
 }
-export default Performance
+export default memo(Performance)

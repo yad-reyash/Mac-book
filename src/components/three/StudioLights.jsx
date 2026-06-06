@@ -1,3 +1,4 @@
+import {memo} from "react";
 import {Environment, Lightformer} from "@react-three/drei";
 
 const StudioLights = () => {
@@ -42,4 +43,4 @@ const StudioLights = () => {
         </group>
     )
 }
-export default StudioLights
+export default memo(StudioLights)
